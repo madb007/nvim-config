@@ -15,6 +15,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.opt.number = true
+
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
+
 require("vim-options")
 require("lazy").setup("plugins")
 
